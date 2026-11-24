@@ -9,7 +9,7 @@ from flask import Flask, jsonify, request, session
 from werkzeug.security import check_password_hash, generate_password_hash
 
 BASE_DIR = Path(__file__).resolve().parent
-DB_PATH = Path(os.environ.get("DATABASE_PATH", BASE_DIR / "interview_platform.db"))
+DB_PATH = Path(os.environ.get("DATABASE_PATH", "/tmp/interview_platform.db"))
 app = Flask(__name__)
 app.config.update(
     SECRET_KEY=os.environ.get("SECRET_KEY", "dev-only-change-this-secret-key"),
